@@ -1,0 +1,48 @@
+#img {
+  height: 400px;
+  width: 400px;
+  display: block;
+  margin: auto;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  width: 98%;
+  margin-right: 1%;
+  padding-top: 100px;
+}
+#card {
+  padding: 15px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  color: teal;
+  background-color: white;
+  border-radius: 20px;
+  transition-duration: 0.5s;
+}
+#card:hover {
+  transform: scale(1.03);
+}
+body {
+  font-family: sans-serif;
+  background-color: #ff6f61;
+}
+.navbar {
+  background-color: darkslategrey;
+  font-family: cursive;
+  line-height: 80px;
+  display: flex;
+  justify-content: space-evenly;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 101;
+}
+.navbar > a {
+  font-size: 30px;
+  text-decoration: none;
+  color: blue;
+}

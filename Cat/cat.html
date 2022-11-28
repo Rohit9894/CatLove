@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #img {
+      height: 100vh;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
+    .container {
+      display: flex;
+      width: 90%;
+      margin: auto;
+      gap: 20px;
+      font-size: larger;
+      background-color: aliceblue;
+      padding-right: 20px;
+      border-radius: 20px;
+    }
+    body {
+      background-color: #e8a798;
+      font-family: sans-serif;
+    }
+  </style>
+  <body>
+    <div class="container"></div>
+  </body>
+</html>
+<script>
+  let Temperament = "Temperament";
+  Temperament = Temperament.bold();
+  let Description = "Description";
+  Description = Description.bold();
+  let item = JSON.parse(localStorage.getItem("details"));
+  console.log(item);
+  let container = document.querySelector(".container");
+  let img = document.createElement("img");
+  img.src = item.image.url;
+  img.setAttribute("id", "img");
+  let name = document.createElement("h3");
+  name.innerText = `Name : ${item.name}`;
+  name.style.color = "black";
+  let description = document.createElement("p");
+  description.innerHTML = Description + " : " + item.description;
+  let tempermant = document.createElement("p");
+  description.style.lineHeight = "22px";
+  tempermant.innerHTML = Temperament + " : " + item.temperament;
+  let wikipedia = document.createElement("a");
+  wikipedia.href = item.wikipedia_url;
+  wikipedia.innerText = "wikipedia";
+  let card = document.createElement("div");
+  card.setAttribute("id", "card");
+  card.append(img);
+  let card1 = document.createElement("div");
+  card1.append(name, tempermant, description, wikipedia);
+  container.append(card, card1);
+</script>
